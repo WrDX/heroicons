@@ -1,0 +1,21 @@
+{
+    "name": "wrdx/heroicons",
+    "description": "Generate heroicons.com with PHP",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Wrdx\\Heroicons\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Wouter",
+            "email": "wouter@wrdx.nl"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "meyfa/php-svg": "^0.14.7"
+    }
+}
