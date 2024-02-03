@@ -1,6 +1,6 @@
 {
     "name": "wrdx/heroicons",
-    "description": "Generate heroicons.com with PHP",
+    "description": "Generate heroicons.com svg icons with PHP",
     "type": "library",
     "license": "MIT",
     "autoload": {
