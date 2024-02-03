@@ -17,5 +17,8 @@
     "require": {
         "php": "^8.0",
         "meyfa/php-svg": "^0.14.7"
+    },
+    "scripts": {
+        "heroicons-update": "bin/update-heroicon-svgs.sh"
     }
 }
