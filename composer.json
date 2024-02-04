@@ -1,24 +1,41 @@
 {
-    "name": "wrdx/heroicons",
-    "description": "Generate heroicons.com svg icons with PHP",
-    "type": "library",
-    "license": "MIT",
-    "autoload": {
-        "psr-4": {
-            "Wrdx\\Heroicons\\": "src/"
-        }
+  "name": "wrdx/heroicons",
+  "description": "GGenerate svg icons from heroicons.com with PHP",
+  "type": "library",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Wrdx\\Heroicons\\": "src/"
     },
-    "authors": [
-        {
-            "name": "Wouter",
-            "email": "wouter@wrdx.nl"
-        }
-    ],
-    "require": {
-        "php": "^8.0",
-        "meyfa/php-svg": "^0.14.7"
-    },
-    "scripts": {
-        "heroicons-update": "bin/update-heroicon-svgs.sh"
+    "files": [
+      "src/helpers.php"
+    ]
+  },
+  "authors": [
+    {
+      "name": "Wouter Dam",
+      "email": "wouter@wrdx.nl",
+      "role": "Developer"
     }
+  ],
+  "require": {
+    "ext-simplexml": "*",
+    "meyfa/php-svg": "^0.14.7",
+    "php": "^8.1"
+  },
+  "scripts": {
+    "heroicons:update": "bin/update-heroicon-svgs.sh",
+    "test": "php vendor/bin/pest"
+  },
+  "require-dev": {
+    "ext-mbstring": "*",
+    "pestphp/pest": "^2.33",
+    "symfony/var-dumper": "^6.4"
+  },
+  "config": {
+    "sort-packages": true,
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
+  }
 }

@@ -2,19 +2,21 @@
 
 # Make sure we're in the right directory
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-cd "$SCRIPT_DIR/../" || exit
+BASEDIR="${SCRIPT_DIR}/../"
+cd "${BASEDIR}" || exit
 
 # Reset resources directory
 echo "Resetting resources directory"
 
-if [ -d "./resources/heroicons" ]; then
-  rm -Rf "./resources/heroicons"
+if [ -d "${BASEDIR}/resources/heroicons" ]; then
+  rm -Rf "${BASEDIR}/resources/heroicons"
 fi
-mkdir -p "./resources/heroicons"
-cd "./resources/heroicons" || exit
+mkdir -p "${BASEDIR}/resources/heroicons"
 
 # Pull heroicons/optimized directory
 echo "Fetching heroicons git repo"
+
+cd "${BASEDIR}/resources/heroicons" || exit
 
 git init -b main -q
 git remote add -f origin https://github.com/tailwindlabs/heroicons.git &> /dev/null
@@ -27,6 +29,9 @@ latestTag=$(git describe --tags "$(git rev-list --tags --max-count=1)")
 echo "Checking out ${latestTag}"
 
 git checkout -q "${latestTag}"
+
+# Note version in .version
+echo "${latestTag}" > "${BASEDIR}/resources/heroicons/.version"
 
 # Remove heroicons .git dir
 echo "Removing heroicons .git directory"
