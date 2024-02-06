@@ -1,6 +1,10 @@
 {
   "name": "wrdx/heroicons",
-  "description": "GGenerate svg icons from heroicons.com with PHP",
+  "description": "Generate svg icons from heroicons.com with PHP",
+  "keywords": [
+    "heroicons",
+    "svg"
+  ],
   "type": "library",
   "license": "MIT",
   "autoload": {
