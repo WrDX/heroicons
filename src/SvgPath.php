@@ -16,7 +16,6 @@ class SvgPath
     public static function one(Type $type, string $icon): string|false
     {
         $svgfile = static::makepath([
-            'optimized',
             $type->size(),
             $type->path(),
             "{$icon}.svg"
@@ -82,7 +81,7 @@ class SvgPath
      */
     private static function svgs(): \Generator
     {
-        $directory = static::makepath(['optimized']);
+        $directory = static::makepath([]);
 
         $it = new \RecursiveIteratorIterator(
             new \RecursiveDirectoryIterator($directory)
